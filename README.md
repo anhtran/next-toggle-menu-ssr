@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# next-toggle-menu-ssr
 
-## Getting Started
+This is a simple project to demonstrate how to create a toggle menu with Next App Router (Next.js 14+).
 
-First, run the development server:
+This app must have the following features:
+- [x] Toggle menu using useState.
+- [x] The content of menu must be rendered dynamically on server side.
+- [x] The content of menu must be shown when view source on browser.
+- [x] No warning on console.
+- [x] Can apply to any Next.js project or third party library (MUI, Tailwind, etc).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Why?
+You can easily create a toggle menu with useState and useEffect. But it will not work on server side rendering. The menu will be shown on client side only.
+You need to show the content of menu on source code of browser. This is important for SEO.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Explanation
+- The server component is rendered dynamically on server side. But cannot be imported on client component.
+- We need to import them on parent server component and pass it as props to client component.
+- The client component will solve problem with `useEffect` and `useState` to render the menu properly.
+# next-toggle-menu-ssr
