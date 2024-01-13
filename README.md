@@ -17,4 +17,6 @@ You need to show the content of menu on source code of browser. This is importan
 - The server component is rendered dynamically on server side. But cannot be imported on client component.
 - We need to import them on parent server component and pass it as props to client component.
 - The client component will solve problem with `useEffect` and `useState` to render the menu properly.
-# next-toggle-menu-ssr
+
+## License
+MIT
